@@ -14,7 +14,11 @@
       "WebFetch(domain:github.com)",
       "Bash(jar:*)",
       "Bash(unzip:*)",
-      "Bash(scala3-compiler -version)"
+      "Bash(scala3-compiler -version)",
+      "Bash(mkdir:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run compile:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []

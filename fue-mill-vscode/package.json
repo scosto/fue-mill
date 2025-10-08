@@ -1,0 +1,46 @@
+{
+  "name": "fue-mill-status",
+  "displayName": "FUE Mill Plugin Status",
+  "description": "Status monitor for FUE Mill Scala compiler plugin",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:fue-mill.statusView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fue-mill-sidebar",
+          "title": "FUE Mill Status",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "fue-mill-sidebar": [
+        {
+          "type": "webview",
+          "id": "fue-mill.statusView",
+          "name": "Plugin Status"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}

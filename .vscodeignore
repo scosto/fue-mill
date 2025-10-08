@@ -1,0 +1,5 @@
+fue-mill-vscode/out/test/**
+fue-mill-vscode/src/**
+fue-mill-vscode/tsconfig.json
+fue-mill-vscode/node_modules/**
+fue-mill-vscode/.vscode-test/**
