@@ -252,7 +252,7 @@ export class StatusViewProvider implements vscode.WebviewViewProvider {
             <div class="radio-group">
                 <div class="radio-option">
                     <input type="radio" id="optionA" name="option" value="a" checked>
-                    <label for="optionA">Option Alfons Steinhoff</label>
+                    <label for="optionA">Option A</label>
                 </div>
                 <div class="radio-option">
                     <input type="radio" id="optionB" name="option" value="b">
