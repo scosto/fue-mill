@@ -4,5 +4,6 @@
     },
     "editor.codeLens": true,
     "metals.enableSemanticHighlighting": true,
-    "metals.testUserInterface": "Code Lenses"
+    "metals.testUserInterface": "Code Lenses",
+    "problems.decorations.enabled": true
 }

@@ -11,7 +11,10 @@
       "Bash(ln:*)",
       "Bash(./mill:*)",
       "Bash(git checkout:*)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(jar:*)",
+      "Bash(unzip:*)",
+      "Bash(scala3-compiler -version)"
     ],
     "deny": [],
     "ask": []

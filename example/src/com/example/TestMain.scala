@@ -10,6 +10,12 @@ object TestMain {
   }
 
   def calculateSum(a: Int, b: Int): Int = {
+    val count = 0 // Test: Variable mit 'c'
+    val xcc = 6
+    val ccc = 777
+    val xc = 5
+    val c = 3333
+
     val sum = a + b
     sum
   }

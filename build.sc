@@ -24,7 +24,11 @@ object example extends ScalaModule {
   override def scalacPluginClasspath = Task { Seq(plugin.jar()) }
 
   // Plugin-Optionen
-  def scalacOptions = Seq()
+  override def scalacOptions = Task {
+    super.scalacOptions() ++ Seq(
+      s"-Xplugin:${plugin.jar().path}"
+    )
+  }
 
   def moduleDeps = Seq(plugin)
 
