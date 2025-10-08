@@ -34,9 +34,12 @@ object example extends ScalaModule {
 
   object test extends ScalaTests {
     def mvnDeps = Seq(
-      mvn"org.scalatest::scalatest:3.2.19"
+      mvn"org.scalatest::scalatest:3.2.19",
+      mvn"org.scala-lang::scala3-compiler:3.7.3-RC3"
     )
 
     def testFramework = "org.scalatest.tools.Framework"
+
+    def moduleDeps = Seq(plugin)
   }
 }
