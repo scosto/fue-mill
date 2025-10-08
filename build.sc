@@ -1,47 +1,38 @@
-import mill._
-import mill.scalalib._
+import mill._, mill.scalalib._
 
 object plugin extends ScalaModule {
-  def scalaVersion = "3.7.3"
+  def scalaVersion = "3.7.3-RC3"
 
-  def ivyDeps = Agg(
-    ivy"org.scala-lang::scala3-compiler:${scalaVersion()}"
+  def mvnDeps = Seq(
+    mvn"org.scala-lang::scala3-compiler:3.7.3-RC3"
   )
 
   // Plugin Properties automatisch generieren
-  def resources = T.sources {
+  override def resources = Task {
     os.write(
-      T.dest / "plugin.properties",
+      Task.dest / "plugin.properties",
       s"pluginClass=com.example.MyCompilerPlugin"
     )
-    super.resources() ++ Seq(PathRef(T.dest))
+    super.resources() ++ Seq(PathRef(Task.dest))
   }
 }
 
 object example extends ScalaModule {
-  def scalaVersion = "3.7.3"
+  def scalaVersion = "3.7.3-RC3"
 
   // Plugin direkt verwenden
-  def scalacPluginClasspath = T{ Seq(plugin.jar()) }
+  override def scalacPluginClasspath = Task { Seq(plugin.jar()) }
 
   // Plugin-Optionen
-  def scalacOptions = Seq(
-    "-P:myplugin:verbose:true",
-    "-Xprint:myplugin"  // Zeigt Plugin-Transformationen
-  )
+  def scalacOptions = Seq()
 
   def moduleDeps = Seq(plugin)
-}
 
-// Test-Modul für Plugin-Tests
-object tests extends ScalaModule {
-  def scalaVersion = "3.7.3"
+  object test extends ScalaTests {
+    def mvnDeps = Seq(
+      mvn"org.scalatest::scalatest:3.2.19"
+    )
 
-  def ivyDeps = Agg(
-    ivy"org.scalatest::scalatest:3.2.19"
-  )
-
-  def scalacPluginClasspath = T{ Seq(plugin.jar()) }
-
-  def testFramework = "org.scalatest.tools.Framework"
+    def testFramework = "org.scalatest.tools.Framework"
+  }
 }

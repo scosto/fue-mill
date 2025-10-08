@@ -9,7 +9,7 @@ class MyCompilerPlugin extends StandardPlugin {
   val name: String = "myplugin"
   override val description: String = "Example Scala 3 Compiler Plugin"
 
-  override def init(options: List[String])(using Context): List[PluginPhase] = {
+  override def initialize(options: List[String])(using Context): List[PluginPhase] = {
     List(new MyPluginPhase(options))
   }
 }

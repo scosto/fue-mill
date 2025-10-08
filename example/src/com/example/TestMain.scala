@@ -1,6 +1,7 @@
 package com.example
 
 object TestMain {
+
   def main(args: Array[String]): Unit = {
     println("Testing compiler plugin...")
 

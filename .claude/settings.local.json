@@ -4,7 +4,14 @@
       "WebFetch(domain:claude.ai)",
       "WebSearch",
       "WebFetch(domain:hub.docker.com)",
-      "WebFetch(domain:mill-build.org)"
+      "WebFetch(domain:mill-build.org)",
+      "mcp__ide__getDiagnostics",
+      "Bash(code:*)",
+      "Read(//home/alfons/**)",
+      "Bash(ln:*)",
+      "Bash(./mill:*)",
+      "Bash(git checkout:*)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": [],
     "ask": []
