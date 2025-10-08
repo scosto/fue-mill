@@ -18,7 +18,12 @@
       "Bash(mkdir:*)",
       "Bash(npm install:*)",
       "Bash(npm run compile:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(npm run package:*)",
+      "Bash(npm run install-extension:*)",
+      "Bash(cat:*)",
+      "Bash(npx vsce package:*)",
+      "Bash(npx @vscode/vsce package:*)"
     ],
     "deny": [],
     "ask": []

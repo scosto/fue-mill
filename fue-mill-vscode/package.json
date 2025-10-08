@@ -2,7 +2,8 @@
   "name": "fue-mill-status",
   "displayName": "FUE Mill Plugin Status",
   "description": "Status monitor for FUE Mill Scala compiler plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "publisher": "fue-mill",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -35,12 +36,15 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "compile": "npx tsc -p ./",
+    "watch": "npx tsc -watch -p ./",
+    "package": "npx @vscode/vsce package --allow-missing-repository --no-dependencies",
+    "install-extension": "code --install-extension fue-mill-status-*.vsix"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.6.2",
     "typescript": "^5.0.0"
   }
 }

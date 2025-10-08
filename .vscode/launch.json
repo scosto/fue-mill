@@ -11,6 +11,18 @@
         "-Xdebug",
         "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
       ]
+    },
+    {
+      "name": "Run VSCode Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/fue-mill-vscode"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/fue-mill-vscode/out/**/*.js"
+      ],
+      "preLaunchTask": "compile-extension"
     }
   ]
 }

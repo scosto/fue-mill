@@ -13,6 +13,50 @@
       "type": "shell",
       "command": "mill tests.test",
       "group": "test"
+    },
+    {
+      "label": "compile-extension",
+      "type": "npm",
+      "script": "compile",
+      "path": "fue-mill-vscode/",
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "Package Extension (VSIX)",
+      "type": "npm",
+      "script": "package",
+      "path": "fue-mill-vscode/",
+      "dependsOn": "compile-extension",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Install Extension",
+      "type": "npm",
+      "script": "install-extension",
+      "path": "fue-mill-vscode/",
+      "dependsOn": "Package Extension (VSIX)",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Update Extension (Full)",
+      "type": "shell",
+      "command": "cd fue-mill-vscode && npm run package && VSIX=$(ls -t fue-mill-status-*.vsix | head -1) && VERSION=$(echo $VSIX | grep -oP '\\d+\\.\\d+\\.\\d+') && rm -rf ~/.vscode/extensions/fue-mill.fue-mill-status-* && mkdir -p ~/.vscode/extensions/fue-mill.fue-mill-status-$VERSION && unzip -q $VSIX -d ~/.vscode/extensions/fue-mill.fue-mill-status-$VERSION/ && cd ~/.vscode/extensions/fue-mill.fue-mill-status-$VERSION/extension && mv * .. 2>/dev/null; mv .* .. 2>/dev/null; cd .. && rmdir extension 2>/dev/null && echo '' && echo '✅ Extension v'$VERSION' installed! Reload: Ctrl+Shift+P -> Reload Window'",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
     }
   ]
 }
