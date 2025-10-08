@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Mill: Continuous Compile",
+      "type": "shell",
+      "command": "mill -w __.compile",
+      "group": "build",
+      "problemMatcher": "$scala"
+    },
+    {
+      "label": "Mill: Test Plugin",
+      "type": "shell",
+      "command": "mill tests.test",
+      "group": "test"
+    }
+  ]
+}

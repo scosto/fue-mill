@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "scala",
+      "request": "launch",
+      "name": "Debug Plugin Test",
+      "mainClass": "com.example.TestMain",
+      "buildTarget": "example",
+      "jvmOptions": [
+        "-Xdebug",
+        "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+      ]
+    }
+  ]
+}

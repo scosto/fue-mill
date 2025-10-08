@@ -1,0 +1,39 @@
+# Mill
+out/
+
+# Metals
+.metals/
+.bloop/
+.bsp/
+metals.sbt
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.iml
+
+# Scala
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Coursier
+.cache/
+.ivy2/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# DevContainer
+.devcontainer/.tmp/
